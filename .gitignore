@@ -1,0 +1,3 @@
+node_modules/
+dist/*
+rabbitMq_microservice/db-data
