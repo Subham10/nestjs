@@ -6,7 +6,8 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller()
 export class UserController {
-  constructor(private readonly userService: UserService,@Inject('USER_MICROSERVICE') private readonly user_client:ClientProxy) {}
+  constructor(private readonly userService: UserService,
+    @Inject('USER_MICROSERVICE') private readonly user_client:ClientProxy) {}
 
   @MessagePattern('createUser')
   create(@Payload() createUserDto: CreateUserDto) {
