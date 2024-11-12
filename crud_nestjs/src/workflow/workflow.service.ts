@@ -20,7 +20,7 @@ export class WorkflowService {
       let imagePathparams=[insertedId,createWorkflowDto.imagePath,createWorkflowDto.createdBy];
       
       await this.mysqlService.query(pathSql,imagePathparams );
-      // await this.mysqlService.commit();
+      await this.mysqlService.commit();
       return {success:true,id:insertedId}
     } catch (error) {
       await this.mysqlService.rollback();
